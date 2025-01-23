@@ -410,10 +410,27 @@ const toolsData = {
   ]
 };
 
+// 添加 XSS 防护函数
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function createToolCard(tool) {
+  // 对所有用户输入数据进行转义
+  const name = escapeHtml(tool.name);
+  const enName = tool.enName ? escapeHtml(tool.enName) : '';
+  const description = escapeHtml(tool.description);
+  const url = escapeHtml(tool.url);
+  const icon = escapeHtml(tool.icon);
+  
   const tags = tool.tags ? `
     <div class="tool-tags">
-      ${tool.tags.map(tag => `<span class="tool-tag">${tag}</span>`).join('')}
+      ${tool.tags.map(tag => `<span class="tool-tag">${escapeHtml(tag)}</span>`).join('')}
     </div>
   ` : '';
   
@@ -422,14 +439,14 @@ function createToolCard(tool) {
       <div class="tool-icon">
         <svg viewBox="0 0 24 24" width="40" height="40">
           <circle cx="12" cy="12" r="11" fill="#1890ff" opacity="0.85"/>
-          <text x="12" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="500">${tool.icon}</text>
+          <text x="12" y="16" text-anchor="middle" fill="white" font-size="12" font-weight="500">${icon}</text>
         </svg>
       </div>
       <div class="tool-info">
-        <h3>${tool.name}${tool.enName ? `<span class="en-name">${tool.enName}</span>` : ''}</h3>
-        <p>${tool.description}</p>
+        <h3>${name}${enName ? `<span class="en-name">${enName}</span>` : ''}</h3>
+        <p>${description}</p>
         ${tags}
-        <a href="${tool.url}" class="link-icon" target="_blank" rel="noopener noreferrer" title="访问链接">
+        <a href="${url}" class="link-icon" target="_blank" rel="noopener noreferrer" title="访问链接">
           <svg viewBox="0 0 24 24" width="16" height="16">
             <path fill="currentColor" d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
           </svg>
@@ -506,5 +523,11 @@ document.addEventListener('DOMContentLoaded', () => {
       top: 0,
       behavior: 'smooth'
     });
+  });
+
+  // 添加搜索输入过滤
+  document.getElementById('search').addEventListener('input', (e) => {
+    const searchTerm = e.target.value.replace(/[<>]/g, ''); // 过滤尖括号
+    // ... 其他搜索逻辑
   });
 });
