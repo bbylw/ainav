@@ -1,0 +1,172 @@
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI导航 | 发现优质AI工具与资源</title>
+    <meta
+      name="description"
+      content="AI导航收录全球数千个优质AI工具，包括AI聊天、AI图像、AI写作、AI开发等多个分类，持续更新，帮助你发现最新最好的AI工具。"
+    />
+    <meta
+      name="keywords"
+      content="AI导航,人工智能导航,ChatGPT导航,AI工具,AI模型,AI图像,AI写作"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <h1>🤖 AI导航</h1>
+          <p class="subtitle"></p>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#tools" class="active"
+                ><span class="nav-icon"><i class="fas fa-robot"></i></span
+                >AI助手</a
+              >
+            </li>
+            <li>
+              <a href="#images"
+                ><span class="nav-icon"><i class="fas fa-image"></i></span
+                >AI图像</a
+              >
+            </li>
+            <li>
+              <a href="#writing"
+                ><span class="nav-icon"><i class="fas fa-pen"></i></span
+                >AI写作</a
+              >
+            </li>
+            <li>
+              <a href="#development"
+                ><span class="nav-icon"><i class="fas fa-code"></i></span
+                >AI开发</a
+              >
+            </li>
+            <li>
+              <a href="#business"
+                ><span class="nav-icon"><i class="fas fa-briefcase"></i></span
+                >AI商业</a
+              >
+            </li>
+            <li>
+              <a href="#productivity"
+                ><span class="nav-icon"><i class="fas fa-bolt"></i></span
+                >AI效率</a
+              >
+            </li>
+            <li>
+              <a href="#research"
+                ><span class="nav-icon"><i class="fas fa-book"></i></span
+                >AI研究</a
+              >
+            </li>
+            <li>
+              <a href="#community"
+                ><span class="nav-icon"><i class="fas fa-users"></i></span
+                >AI社区</a
+              >
+            </li>
+            <li>
+              <a href="#life"
+                ><span class="nav-icon"><i class="fas fa-star"></i></span
+                >AI生活</a
+              >
+            </li>
+            <li>
+              <a href="#careers"
+                ><span class="nav-icon"><i class="fas fa-user-tie"></i></span
+                >AI求职</a
+              >
+            </li>
+            <li>
+              <a href="#learning"
+                ><span class="nav-icon"
+                  ><i class="fas fa-graduation-cap"></i></span
+                >AI学习</a
+              >
+            </li>
+            <li>
+              <a href="#prompts"
+                ><span class="nav-icon"><i class="fas fa-lightbulb"></i></span
+                >提示词</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main>
+        <div class="search-container">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search" placeholder="搜索AI工具..." />
+          </div>
+        </div>
+
+        <div id="content">
+          <!-- Template for tool cards -->
+          <div class="category" id="tools">
+            <h2><i class="fas fa-robot"></i> AI助手</h2>
+            <div class="tools-grid">
+              <a href="#" class="tool-card">
+                <div class="tool-icon category-ai-assistant">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="tool-info">
+                  <h3>ChatGPT <span class="en-name">OpenAI</span></h3>
+                  <p>
+                    强大的AI对话助手，支持多轮对话，可以帮助回答问题、写作、编程等多种任务
+                  </p>
+                  <div class="tool-tags">
+                    <span class="tool-tag">AI对话</span>
+                    <span class="tool-tag">免费</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="tool-card">
+                <div class="tool-icon category-ai-image">
+                  <i class="fas fa-image"></i>
+                </div>
+                <div class="tool-info">
+                  <h3>Midjourney <span class="en-name">Midjourney</span></h3>
+                  <p>AI图像生成工具，通过文字描述生成高质量艺术作品</p>
+                  <div class="tool-tags">
+                    <span class="tool-tag">AI绘画</span>
+                    <span class="tool-tag">付费</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p>正在加载AI工具...</p>
+          </div>
+        </div>
+      </main>
+
+      <div class="scroll-top">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path
+            fill="currentColor"
+            d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+          />
+        </svg>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
